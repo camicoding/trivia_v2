@@ -1,6 +1,8 @@
 package mundo;
 
-public class Ronda 
+import java.io.Serializable;
+
+public class Ronda implements Serializable
 {
 	// ---------------------------------------------------------
 	// Constantes

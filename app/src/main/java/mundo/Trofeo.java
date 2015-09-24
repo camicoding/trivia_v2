@@ -1,6 +1,8 @@
 package mundo;
 
-public class Trofeo 
+import java.io.Serializable;
+
+public class Trofeo  implements Serializable
 {
 	// ---------------------------------------------------------
 	// Atributos

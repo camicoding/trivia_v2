@@ -1,10 +1,12 @@
 package colombia.game.trivia.colombiadiversa;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -30,11 +32,15 @@ public class TrophiesActivity extends AppCompatActivity {
     private ImageView[]  trofeos;
     private ArrayList<Trofeo> trofeos2 ;
 
+    private Juego juego;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trofeos);
+
+        trofeos = new ImageView[9];
+        trofeos2 = new ArrayList<Trofeo>(9);
 
         butTrofeo1=(ImageView) findViewById(R.id.butTro1);
         butTrofeo2=(ImageView) findViewById(R.id.butTro2);
@@ -56,20 +62,30 @@ public class TrophiesActivity extends AppCompatActivity {
         trofeos[7] = (ImageView) findViewById(R.id.butTro8);
         trofeos[8] = (ImageView) findViewById(R.id.butTro9);
 
-        Juego game = ((Juego)getIntent().getSerializableExtra("Game"));
-        trofeos2 = game.getTrofeos();
-        puntuacion = game.getPuntajeTotal();
+        // 2. get person object from intent
+        juego = (Juego) getIntent().getSerializableExtra("mundo.Juego");
+
+        trofeos2 = juego.getTrofeos();
+       // puntuacion = juego.getPuntajeTotal();
+        puntuacion = MainActivity.puntos;
 
         int i = 0;
         for(Trofeo t : trofeos2){
             if(puntuacion >= t.getPuntajeRequerido()){
-                trofeos[i].setEnabled(false);
-            }else{
-                trofeos[i].setEnabled(true);
+                //trofeos[i].setVisibility(View.VISIBLE);
+                trofeos[i].setImageResource(getImageId(this, "trofeo"+(i+1)));
             }
+            /*else{
+                trofeos[i].setVisibility(View.INVISIBLE);
+            }
+            */
             i++;
         }
         //setContentView(R.layout.trofeos);
+    }
+
+    public static int getImageId(Context context, String imageName) {
+        return context.getResources().getIdentifier("drawable/" + imageName, null, context.getPackageName());
     }
 
     public void destaparTrofeos(int puntaje){

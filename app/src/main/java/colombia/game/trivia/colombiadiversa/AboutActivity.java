@@ -6,13 +6,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import mundo.Juego;
+
 
 public class AboutActivity extends AppCompatActivity {
+
+    private Juego juego;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
+
+        // 2. get person object from intent
+        juego = (Juego) getIntent().getSerializableExtra("mundo.Juego");
     }
 
     @Override

@@ -1,6 +1,8 @@
 package mundo;
 
-public class Opcion 
+import java.io.Serializable;
+
+public class Opcion implements Serializable
 {
 	// ---------------------------------------------------------
 	// Atributos

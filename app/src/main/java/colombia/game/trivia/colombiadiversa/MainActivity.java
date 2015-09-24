@@ -22,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton butTrophies;
     private ImageButton butAbout;
 
+    private Juego juego;
+
+    public static int puntos = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // hide the window title.
@@ -35,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         butPlay=(ImageButton) findViewById(R.id.butPlay);
         butTrophies=(ImageButton) findViewById(R.id.butTrofeo);
         butAbout=(ImageButton) findViewById(R.id.butAbout);
+        juego = new Juego(getAssets());
+        juego.jugarRonda();
 
     }
 
@@ -61,15 +67,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onPlay(View v){
-
+        Intent i = new Intent(MainActivity.this,GameActivity.class);
+        i.putExtra("mundo.Juego",juego);
+        startActivity(i);
     }
 
     public void onAbout(View v){
-
+        Intent i = new Intent(MainActivity.this,AboutActivity.class);
+        i.putExtra("mundo.Juego",juego);
+        startActivity(i);
     }
 
     public void onTrophies(View v){
-
+        Intent i = new Intent(MainActivity.this,TrophiesActivity.class);
+        i.putExtra("mundo.Juego",juego);
+        i.putExtra("puntaje",puntos);
+        startActivity(i);
     }
 
     public void cambiarActividad(int actividad){

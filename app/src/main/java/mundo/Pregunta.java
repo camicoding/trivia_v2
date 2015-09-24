@@ -1,6 +1,8 @@
 package mundo;
 
-public class Pregunta
+import java.io.Serializable;
+
+public class Pregunta implements Serializable
 {
 	// ---------------------------------------------------------
 	// Constantes

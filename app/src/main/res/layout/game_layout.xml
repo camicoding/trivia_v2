@@ -17,20 +17,20 @@
             android:layout_weight="50"
             android:layout_gravity="center_vertical">
 
-            <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/butOp1"
-            android:src="@drawable/q2_o1"
-            android:layout_weight="50"
+             <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/butOp1"
+                 android:onClick="option1"
+                android:layout_weight="50"
                 android:layout_gravity="center"
                 android:background="@color/Primary_Green" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
+                android:onClick="option2"
                 android:id="@+id/butOp2"
-                android:src="@drawable/q2_o2"
                 android:layout_weight="50"
                 android:layout_gravity="center"
                 android:background="@color/Accent" />
@@ -44,9 +44,10 @@
 
             <ImageButton
                 android:layout_width="wrap_content"
+                android:onClick="option3"
                 android:layout_height="match_parent"
+
                 android:id="@+id/butOp3"
-                android:src="@drawable/q2_o3"
                 android:layout_gravity="center"
                 android:layout_weight="50"
                 android:background="@color/Accent" />
@@ -54,8 +55,9 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:onClick="option4"
+
                 android:id="@+id/butOp4"
-                android:src="@drawable/q2_o4"
                 android:layout_weight="50"
                 android:layout_gravity="center"
                 android:background="@color/Primary_Green" />
@@ -65,14 +67,13 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/pregunta"
         android:layout_centerInParent="true"
-        android:text="Colombia tiene una extension territorial de 1,141,748 km2, esto le confiere la posicion __ a nivel mundial"
+        android:text="Pregunta Colombia"
         android:textColor="@color/Icons"
         android:textSize="22dp"
         android:textAlignment="viewStart"
         android:gravity="start"
-        android:background="@color/Divider"
         android:singleLine="false"
         android:elegantTextHeight="false"
         android:elevation="8dp"
@@ -80,6 +81,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:textIsSelectable="false" />
+    <!-- android:background="@color/Divider" -->
 
     <Chronometer
         android:layout_width="wrap_content"
@@ -89,5 +91,64 @@
         android:layout_alignParentStart="false"
         android:layout_centerHorizontal="true"
         android:layout_alignParentLeft="false" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:layout_gravity="center_vertical">
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:layout_gravity="center"
+                android:text="New Text"
+                android:id="@+id/p1"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:layout_gravity="center"
+                android:text="New Text"
+                android:id="@+id/p2"
+                android:layout_centerHorizontal="true"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="50">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="New Text"
+                android:layout_weight="50"
+                android:layout_gravity="center"
+                android:id="@+id/p3"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:layout_gravity="center"
+                android:text="New Text"
+                android:id="@+id/p4"
+                android:layout_centerHorizontal="true"/>
+        </TableRow>
+    </TableLayout>
+
 
 </RelativeLayout>

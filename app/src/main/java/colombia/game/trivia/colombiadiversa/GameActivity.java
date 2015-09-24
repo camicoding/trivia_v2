@@ -1,11 +1,13 @@
 package colombia.game.trivia.colombiadiversa;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -22,41 +24,152 @@ public class GameActivity extends AppCompatActivity {
     private int puntuacion;
 
     //Lista de preguntas
-    private Juego game;
     private Pregunta pregunta;
     private Opcion[] opciones;
+    private EditText[] textos;
+
+    private Juego juego;
+
+    private int cuenta=0;
+    private int buenas=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_layout);
 
-        // Inicializan con datos el mapa
-        game = (Juego) getIntent().getSerializableExtra("Game");
-        if(game.getRondaActual().isTerminoRonda()){
-            game.jugarRonda();
+        // 2. get person object from intent
+        juego = (Juego) getIntent().getSerializableExtra("mundo.Juego");
+
+        if(juego.getRondaActual().isTerminoRonda()){
+            juego.jugarRonda();
         }
 
-        pregunta = game.getRondaActual().getPreguntaActual();
-        opciones = pregunta.getOpciones();
-        puntuacion = game.getPuntajeTotal();
         btnRespuestas = new ImageButton[4];
         btnRespuestas[0] = (ImageButton) findViewById(R.id.butOp1);
         btnRespuestas[1] = (ImageButton) findViewById(R.id.butOp2);
         btnRespuestas[2] = (ImageButton) findViewById(R.id.butOp3);
         btnRespuestas[3] = (ImageButton) findViewById(R.id.butOp4);
 
-        int i = 0;
-        for(ImageButton img : btnRespuestas){
-            // Añado la respuesta que deberia mostrarse en los cuadros
-            // No se como poner de forma automatica el id del drawable
-            img.setImageResource(R.drawable.q15_o4);
-            i++;
-        }
-        question = (EditText) findViewById(R.id.editText);
-        question.setText(pregunta.getPregunta());
+        textos = new EditText[4];
+        textos[0] = (EditText) findViewById(R.id.p1);
+        textos[1] = (EditText) findViewById(R.id.p2);
+        textos[2] = (EditText) findViewById(R.id.p3);
+        textos[3] = (EditText) findViewById(R.id.p4);
+        /*
+        btnRespuestas[0].setImageResource(R.drawable.blank);
+        btnRespuestas[1].setImageResource(R.drawable.blank);
+        btnRespuestas[2].setImageResource(R.drawable.blank);
+        btnRespuestas[3].setImageResource(R.drawable.blank);
+        */
+
+        refescar();
 
         //setContentView(R.layout.game_layout);
+    }
+    public void refescar(){
+        if(cuenta > 5){
+            darResultados();
+        }
+        else {
+            pregunta = juego.getRondaActual().getPreguntaActual();
+            opciones = pregunta.getOpciones();
+            puntuacion = juego.getPuntajeTotal();
+
+            int i = 0;
+            for (ImageButton img : btnRespuestas) {
+                img.setImageResource(getImageId(this, opciones[i].getURL()));
+                textos[i].setText(opciones[i].getOpcion());
+                i++;
+            }
+            question = (EditText) findViewById(R.id.pregunta);
+            question.setText(pregunta.getPregunta());
+            cuenta++;
+        }
+    }
+
+    public void darResultados(){
+        Intent i = new Intent(GameActivity.this,ResultsActivity.class);
+        i.putExtra("mundo.Juego",juego);
+        i.putExtra("puntaje",MainActivity.puntos);
+        i.putExtra("buenas",buenas);
+        int malas = 5-buenas;
+        i.putExtra("malas",malas);
+        startActivity(i);
+        finish();
+    }
+
+    public void option1(View v){
+        boolean correcta = juego.comprobarOpcion(0);
+
+        if(correcta){
+            MainActivity.puntos+=10;
+            buenas++;
+            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Correcta" + puntuacion , Toast.LENGTH_SHORT);
+            toast.show();
+        }else{
+            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Incorrecta" + puntuacion , Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        refescar();
+        //nextQuestion();
+    }
+
+    public void option2(View v){
+        boolean correcta = juego.comprobarOpcion(1);
+
+        if(correcta){
+            MainActivity.puntos+=10;
+            buenas++;
+            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Correcta" + puntuacion , Toast.LENGTH_SHORT);
+            toast.show();
+        }else{
+            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Incorrecta" + puntuacion , Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        refescar();
+        //nextQuestion();
+    }
+
+    public void option3(View v){
+        boolean correcta = juego.comprobarOpcion(2);
+
+        if(correcta){
+            MainActivity.puntos+=10;
+            buenas++;
+            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Correcta" + puntuacion , Toast.LENGTH_SHORT);
+            toast.show();
+        }else{
+            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Incorrecta" + puntuacion , Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        refescar();
+        //nextQuestion();
+    }
+
+    public void option4(View v){
+        boolean correcta = juego.comprobarOpcion(3);
+
+        if(correcta){
+            MainActivity.puntos+=10;
+            buenas++;
+            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Correcta" + puntuacion , Toast.LENGTH_SHORT);
+            toast.show();
+        }else{
+            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Incorrecta" + puntuacion , Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        refescar();
+        //nextQuestion();
+    }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing.
+    }
+
+    public static int getImageId(Context context, String imageName) {
+        return context.getResources().getIdentifier("drawable/" + imageName, null, context.getPackageName());
     }
 
     @Override
@@ -82,7 +195,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void verificarCorrecta(int  img){
-        boolean correcta = game.comprobarOpcion(img);
+        boolean correcta = juego.comprobarOpcion(img);
 
         if(correcta){
             Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Correcta - Tu puntaje es: " + puntuacion , Toast.LENGTH_SHORT);

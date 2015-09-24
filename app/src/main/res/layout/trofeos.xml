@@ -12,13 +12,25 @@
     android:background="@color/Primary_Dark"
     tools:context=".TrophiesActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tus Trofeos"
+        android:id="@+id/txtTusTrofeos"
+        android:textColor="@color/Primary_text"
+        android:textSize="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tableLayout"
         android:background="@drawable/border"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txtTusTrofeos">
+
 
         <TableRow
             android:layout_width="match_parent"
@@ -32,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/butTro1"
                 android:layout_column="2"
-                android:src="@drawable/trofeo1"
+                android:src="@drawable/not3"
                 android:layout_gravity="bottom|center_horizontal" />
 
             <ImageView
@@ -40,14 +52,14 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/butTro2"
                 android:layout_column="2"
-                android:src="@drawable/trofeo2"
+                android:src="@drawable/not3"
                 android:layout_gravity="bottom|center_horizontal" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/butTro3"
                 android:layout_column="2"
-                android:src="@drawable/trofeo3"
+                android:src="@drawable/not3"
                 android:layout_gravity="bottom|center_horizontal" />
         </TableRow>
         <TableRow
@@ -62,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/butTro4"
                 android:layout_column="2"
-                android:src="@drawable/trofeo4"
+                android:src="@drawable/not3"
                 android:layout_gravity="bottom|center_horizontal" />
 
             <ImageView
@@ -70,14 +82,14 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/butTro5"
                 android:layout_column="2"
-                android:src="@drawable/trofeo5"
+                android:src="@drawable/not3"
                 android:layout_gravity="bottom|center_horizontal" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/butTro6"
                 android:layout_column="2"
-                android:src="@drawable/trofeo6"
+                android:src="@drawable/not3"
                 android:layout_gravity="bottom|center_horizontal" />
         </TableRow>
         <TableRow
@@ -92,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/butTro7"
                 android:layout_column="2"
-                android:src="@drawable/trofeo7"
+                android:src="@drawable/not3"
                 android:layout_gravity="bottom|center_horizontal" />
 
             <ImageView
@@ -100,27 +112,17 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/butTro8"
                 android:layout_column="2"
-                android:src="@drawable/trofeo8"
+                android:src="@drawable/not3"
                 android:layout_gravity="bottom|center_horizontal" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/butTro9"
                 android:layout_column="2"
-                android:src="@drawable/trofeo9"
+                android:src="@drawable/not3"
                 android:layout_gravity="bottom|center_horizontal" />
         </TableRow>
     </TableLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tus Trofeos"
-        android:id="@+id/txtTusTrofeos"
-        android:textColor="@color/Primary_text"
-        android:textSize="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
 
