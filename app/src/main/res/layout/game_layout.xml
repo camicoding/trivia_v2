@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:layout_gravity="center_vertical">
+
+            <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/butOp1"
+            android:src="@drawable/q2_o1"
+            android:layout_weight="50"
+                android:layout_gravity="center"
+                android:background="@color/Primary_Green" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/butOp2"
+                android:src="@drawable/q2_o2"
+                android:layout_weight="50"
+                android:layout_gravity="center"
+                android:background="@color/Accent" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="50">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/butOp3"
+                android:src="@drawable/q2_o3"
+                android:layout_gravity="center"
+                android:layout_weight="50"
+                android:background="@color/Accent" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/butOp4"
+                android:src="@drawable/q2_o4"
+                android:layout_weight="50"
+                android:layout_gravity="center"
+                android:background="@color/Primary_Green" />
+        </TableRow>
+    </TableLayout>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_centerInParent="true"
+        android:text="Colombia tiene una extension territorial de 1,141,748 km2, esto le confiere la posicion __ a nivel mundial"
+        android:textColor="@color/Icons"
+        android:textSize="22dp"
+        android:textAlignment="viewStart"
+        android:gravity="start"
+        android:background="@color/Divider"
+        android:singleLine="false"
+        android:elegantTextHeight="false"
+        android:elevation="8dp"
+        android:ellipsize="middle"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textIsSelectable="false" />
+
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chronometer"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentStart="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="false" />
+
+</RelativeLayout>

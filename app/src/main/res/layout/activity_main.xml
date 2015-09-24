@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/inicio"
+    android:background="@drawable/rainforest2"
+    >
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/play"
+        android:id="@+id/butPlay"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible"
+        android:backgroundTint="@color/Divider"
+        android:cropToPadding="false"
+        android:clickable="true"
+        android:paddingBottom="8dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingRight="0dp"
+        android:longClickable="false"
+        android:elevation="12dp"
+        android:baselineAlignBottom="false"
+        android:backgroundTintMode="src_in"
+        style="@style/AppTheme" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/trofeo"
+        android:id="@+id/butTrofeo"
+        android:visibility="visible"
+        android:backgroundTint="@color/Divider"
+        android:cropToPadding="false"
+        android:clickable="true"
+        android:paddingBottom="8dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingRight="0dp"
+        android:longClickable="false"
+        android:elevation="12dp"
+        android:baselineAlignBottom="false"
+        android:backgroundTintMode="src_in"
+
+
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/butPlay"
+        android:layout_toRightOf="@id/butPlay"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sobre_app"
+        android:id="@+id/butSobreApp"
+        android:layout_alignBottom="@+id/butTrofeo"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:visibility="visible"
+        android:backgroundTint="@color/Divider"
+        android:cropToPadding="false"
+        android:clickable="true"
+        android:paddingBottom="8dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingRight="0dp"
+        android:longClickable="false"
+        android:elevation="12dp"
+        android:baselineAlignBottom="false"
+        android:backgroundTintMode="src_in"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Colombia Diversa"
+        android:id="@+id/txtTitulo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        android:textColor="@color/Primary_text"
+        android:singleLine="false"
+        android:phoneNumber="false"
+        android:fontFamily="@string/action_settings" />
+</RelativeLayout>
