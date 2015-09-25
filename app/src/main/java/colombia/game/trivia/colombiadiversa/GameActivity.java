@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import mundo.Juego;
@@ -20,13 +21,13 @@ import mundo.Pregunta;
 public class GameActivity extends AppCompatActivity {
 
     private ImageButton[] btnRespuestas;
-    private EditText question;
+    private TextView question;
     private int puntuacion;
 
     //Lista de preguntas
     private Pregunta pregunta;
     private Opcion[] opciones;
-    private EditText[] textos;
+    private TextView[] textos;
 
     private Juego juego;
 
@@ -51,11 +52,11 @@ public class GameActivity extends AppCompatActivity {
         btnRespuestas[2] = (ImageButton) findViewById(R.id.butOp3);
         btnRespuestas[3] = (ImageButton) findViewById(R.id.butOp4);
 
-        textos = new EditText[4];
-        textos[0] = (EditText) findViewById(R.id.p1);
-        textos[1] = (EditText) findViewById(R.id.p2);
-        textos[2] = (EditText) findViewById(R.id.p3);
-        textos[3] = (EditText) findViewById(R.id.p4);
+        textos = new TextView[4];
+        textos[0] = (TextView) findViewById(R.id.p1);
+        textos[1] = (TextView) findViewById(R.id.p2);
+        textos[2] = (TextView) findViewById(R.id.p3);
+        textos[3] = (TextView) findViewById(R.id.p4);
         /*
         btnRespuestas[0].setImageResource(R.drawable.blank);
         btnRespuestas[1].setImageResource(R.drawable.blank);
@@ -82,7 +83,7 @@ public class GameActivity extends AppCompatActivity {
                 textos[i].setText(opciones[i].getOpcion());
                 i++;
             }
-            question = (EditText) findViewById(R.id.pregunta);
+            question = (TextView) findViewById(R.id.pregunta);
             question.setText(pregunta.getPregunta());
             cuenta++;
         }
