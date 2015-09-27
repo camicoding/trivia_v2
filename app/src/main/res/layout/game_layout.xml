@@ -24,7 +24,9 @@
                  android:onClick="option1"
                 android:layout_weight="50"
                 android:layout_gravity="center"
-                android:background="@color/Primary_Green" />
+                android:background="@color/Primary_Green"
+                 android:elevation="8dp"
+                 android:clickable="false" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -33,7 +35,8 @@
                 android:id="@+id/butOp2"
                 android:layout_weight="50"
                 android:layout_gravity="center"
-                android:background="@color/Accent" />
+                android:background="@color/Accent"
+                android:elevation="8dp" />
 
         </TableRow>
 
@@ -41,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="50">
+
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -50,7 +54,8 @@
                 android:id="@+id/butOp3"
                 android:layout_gravity="center"
                 android:layout_weight="50"
-                android:background="@color/Accent" />
+                android:background="@color/Accent"
+                android:elevation="8dp" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -60,39 +65,10 @@
                 android:id="@+id/butOp4"
                 android:layout_weight="50"
                 android:layout_gravity="center"
-                android:background="@color/Primary_Green" />
+                android:background="@color/Primary_Green"
+                android:elevation="8dp" />
         </TableRow>
     </TableLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pregunta"
-        android:layout_centerInParent="true"
-        android:text="Pregunta Colombia"
-        android:textColor="@color/Icons"
-        android:textSize="22dp"
-        android:textAlignment="viewStart"
-        android:gravity="start"
-        android:singleLine="false"
-        android:elegantTextHeight="false"
-        android:elevation="8dp"
-        android:ellipsize="middle"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:textIsSelectable="false"
-        android:background="@color/Divider"/>
-    <!-- android:background="@color/Divider" -->
-
-    <Chronometer
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/chronometer"
-        android:visibility="invisible"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentStart="false"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentLeft="false" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -105,26 +81,32 @@
             android:layout_gravity="center_vertical">
 
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
                 android:layout_centerVertical="true"
-                android:layout_gravity="center"
                 android:text="New Text"
                 android:id="@+id/p1"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                style="@style/Base.TextAppearance.AppCompat.Title"
+                android:layout_column="60"
+                android:layout_gravity="center"
+                android:layout_weight="50"
+                android:layout_marginLeft="60dp"
+                android:textAlignment="center" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
                 android:layout_gravity="center"
                 android:text="New Text"
                 android:id="@+id/p2"
                 android:layout_centerHorizontal="true"
-                />
+                style="@style/Base.TextAppearance.AppCompat.Title"
+                android:layout_column="70"
+                android:layout_weight="50"
+                android:layout_marginLeft="60dp"
+                android:textAlignment="center" />
 
         </TableRow>
 
@@ -136,22 +118,59 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New Text"
-                android:layout_weight="50"
+                android:layout_weight="60"
                 android:layout_gravity="center"
-                android:id="@+id/p3"
-                android:layout_centerHorizontal="true" />
+                android:text="New Text"
+                android:id="@+id/p4"
+                android:layout_centerHorizontal="true"
+                style="@style/Base.TextAppearance.AppCompat.Title"
+                android:layout_column="60"
+                android:layout_marginLeft="60dp"
+                android:textAlignment="center" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
+                android:layout_centerVertical="true"
                 android:layout_gravity="center"
                 android:text="New Text"
-                android:id="@+id/p4"
-                android:layout_centerHorizontal="true"/>
+                android:id="@+id/p3"
+                android:layout_centerHorizontal="true"
+                style="@style/Base.TextAppearance.AppCompat.Title"
+                android:layout_column="70"
+                android:layout_marginLeft="60dp"
+                android:textAlignment="center" />
         </TableRow>
     </TableLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pregunta"
+        android:text="Pregunta Colombia"
+        android:textColor="@color/Icons"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:singleLine="false"
+        android:elegantTextHeight="false"
+        android:elevation="8dp"
+        android:textIsSelectable="false"
+        android:background="@color/Primary_Dark"
+        android:autoText="false"
+        android:layout_centerInParent="true"
+        android:gravity="start" />
+    <!-- android:background="@color/Divider" -->
+
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chronometer"
+        android:visibility="invisible"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentStart="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="false" />
 
 
 </RelativeLayout>

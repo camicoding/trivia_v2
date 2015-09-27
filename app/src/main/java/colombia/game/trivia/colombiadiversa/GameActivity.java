@@ -2,6 +2,7 @@ package colombia.game.trivia.colombiadiversa;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -64,9 +65,28 @@ public class GameActivity extends AppCompatActivity {
         btnRespuestas[3].setImageResource(R.drawable.blank);
         */
 
+
+
         refescar();
 
+        changeFont();
         //setContentView(R.layout.game_layout);
+    }
+
+    /**
+     * Método encargado de hacer el cambio de las fuentes de los text view elegidos
+     *
+     */
+    public void changeFont() {
+
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/trebuchet.ttf");
+
+        question.setTypeface(custom_font);
+        textos[0].setTypeface(custom_font);
+        textos[1].setTypeface(custom_font);
+        textos[2].setTypeface(custom_font);
+        textos[3].setTypeface(custom_font);
+
     }
     public void refescar(){
         if(cuenta > 5){
