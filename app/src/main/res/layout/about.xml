@@ -5,14 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".AboutActivity"
     android:weightSum="1"
-    android:background="@color/Accent">
+    android:background="@color/Primary_Green"
+    android:elevation="6dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/title"
         android:layout_centerHorizontal="true"
-        android:text="Conoce Tu Colombia"
+        android:text="@string/title_name"
         android:textStyle="bold"
         android:textSize="40dp"
         android:editable="false"
@@ -29,12 +30,26 @@
         android:paddingBottom="15dp"
         android:paddingRight="15dp"
         android:paddingLeft="15dp"
-        android:textSize="25dp"
+        android:textSize="22dp"
         android:text="@string/about"
         android:id="@+id/txtAbout"
         android:textColor="@color/Icons"
         android:layout_below="@+id/title"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="42dp" />
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnVolverA"
+        android:backgroundTintMode="src_in"
+        android:onClick="onVolverA"
+        android:src="@drawable/refresh"
+        android:cropToPadding="false"
+        android:clickable="true"
+        android:background="@color/Primary_Dark"
+        android:elevation="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

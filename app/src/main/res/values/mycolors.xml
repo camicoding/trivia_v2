@@ -2,11 +2,13 @@
 <resources>
     <color name="Primary_Green">#047406</color>
     <color name="Primary_Dark">#1B676B</color>
-    <color name="Primary_light">#A8DBA8</color>
+    <color name="Cambio_Blue">#316582</color>
     <color name="Accent">#298601</color>
     <color name="Secondary_text">#727272</color>
     <color name="Icons">#FFFFFF</color>
     <color name="Divider">#0B486B</color>
+    <color name="Cambio_Verde_Dark">#338E35</color>
+    <color name="Cambio_verde_light">#4B9929</color>
 
     <!--
     <selector xmlns:android="http://schemas.android.com/apk/res/android">

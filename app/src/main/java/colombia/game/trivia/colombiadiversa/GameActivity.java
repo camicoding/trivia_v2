@@ -3,6 +3,7 @@ package colombia.game.trivia.colombiadiversa;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -101,10 +102,19 @@ public class GameActivity extends AppCompatActivity {
             for (ImageButton img : btnRespuestas) {
                 img.setImageResource(getImageId(this, opciones[i].getURL()));
                 textos[i].setText(opciones[i].getOpcion());
+                if (i==0 || i==3){
+
+                    btnRespuestas[i].setBackgroundColor(getResources().getColor(R.color.Primary_Green));
+
+                }else if(i ==1 || i == 2){
+
+                    btnRespuestas[i].setBackgroundColor(getResources().getColor(R.color.Accent));
+                }
                 i++;
             }
             question = (TextView) findViewById(R.id.pregunta);
             question.setText(pregunta.getPregunta());
+
             cuenta++;
         }
     }
@@ -121,66 +131,103 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void option1(View v){
-        boolean correcta = juego.comprobarOpcion(0);
 
-        if(correcta){
-            MainActivity.puntos+=10;
-            buenas++;
-            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Correcta" + puntuacion , Toast.LENGTH_SHORT);
-            toast.show();
-        }else{
-            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Incorrecta" + puntuacion , Toast.LENGTH_SHORT);
-            toast.show();
-        }
-        refescar();
+        btnRespuestas[0].setBackgroundColor(getResources().getColor(R.color.Cambio_Verde_Dark));
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                boolean correcta = juego.comprobarOpcion(0);
+
+                if (correcta) {
+                    MainActivity.puntos += 10;
+                    buenas++;
+                    Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Correcta" + puntuacion, Toast.LENGTH_SHORT);
+                    toast.show();
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Incorrecta" + puntuacion, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+
+                refescar();
+            }
+        }, 100);
+
+
         //nextQuestion();
     }
 
     public void option2(View v){
-        boolean correcta = juego.comprobarOpcion(1);
 
-        if(correcta){
-            MainActivity.puntos+=10;
-            buenas++;
-            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Correcta" + puntuacion , Toast.LENGTH_SHORT);
-            toast.show();
-        }else{
-            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Incorrecta" + puntuacion , Toast.LENGTH_SHORT);
-            toast.show();
-        }
-        refescar();
+        btnRespuestas[1].setBackgroundColor(getResources().getColor(R.color.Cambio_verde_light));
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                boolean correcta = juego.comprobarOpcion(1);
+                if (correcta) {
+                    MainActivity.puntos += 10;
+                    buenas++;
+                    Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Correcta" + puntuacion, Toast.LENGTH_SHORT);
+                    toast.show();
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Incorrecta" + puntuacion, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                refescar();
+            }
+        }, 100);
+
         //nextQuestion();
     }
 
     public void option3(View v){
-        boolean correcta = juego.comprobarOpcion(2);
 
-        if(correcta){
-            MainActivity.puntos+=10;
-            buenas++;
-            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Correcta" + puntuacion , Toast.LENGTH_SHORT);
-            toast.show();
-        }else{
-            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Incorrecta" + puntuacion , Toast.LENGTH_SHORT);
-            toast.show();
-        }
-        refescar();
+        btnRespuestas[2].setBackgroundColor(getResources().getColor(R.color.Cambio_Verde_Dark));
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                boolean correcta = juego.comprobarOpcion(2);
+                if (correcta) {
+                    MainActivity.puntos += 10;
+                    buenas++;
+                    Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Correcta" + puntuacion, Toast.LENGTH_SHORT);
+                    toast.show();
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Incorrecta" + puntuacion, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                refescar();
+            }
+        }, 100);
+
         //nextQuestion();
     }
 
     public void option4(View v){
-        boolean correcta = juego.comprobarOpcion(3);
 
-        if(correcta){
-            MainActivity.puntos+=10;
-            buenas++;
-            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Correcta" + puntuacion , Toast.LENGTH_SHORT);
-            toast.show();
-        }else{
-            Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Incorrecta" + puntuacion , Toast.LENGTH_SHORT);
-            toast.show();
-        }
-        refescar();
+        btnRespuestas[3].setBackgroundColor(getResources().getColor(R.color.Cambio_verde_light));
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                boolean correcta = juego.comprobarOpcion(3);
+                if (correcta) {
+                    MainActivity.puntos += 10;
+                    buenas++;
+                    Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Correcta" + puntuacion, Toast.LENGTH_SHORT);
+                    toast.show();
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Respuesta Incorrecta" + puntuacion, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                refescar();
+            }
+        }, 100);
+
         //nextQuestion();
     }
 

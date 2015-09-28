@@ -27,40 +27,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/tableLayout"
         android:background="@drawable/border"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/txtTusTrofeos">
+        android:layout_below="@+id/txtTusTrofeos"
+        android:layout_centerHorizontal="true">
 
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/border"
-            android:layout_gravity="bottom|center_horizontal"
-            android:padding="6dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/butTro1"
-                android:layout_column="2"
-                android:src="@drawable/not1"
-                android:layout_gravity="bottom|center_horizontal" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/butTro2"
-                android:layout_column="2"
-                android:src="@drawable/not2"
-                android:layout_gravity="bottom|center_horizontal" />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/butTro3"
-                android:layout_column="2"
-                android:src="@drawable/not3"
-                android:layout_gravity="bottom|center_horizontal" />
-        </TableRow>
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -121,7 +91,56 @@
                 android:src="@drawable/not9"
                 android:layout_gravity="bottom|center_horizontal" />
         </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:layout_gravity="bottom|center_horizontal"
+            android:padding="6dp"
+            android:layout_alignTop="@+id/tableLayout"
+            android:layout_alignLeft="@+id/txtTusTrofeos"
+            android:layout_alignStart="@+id/txtTusTrofeos"
+            android:id="@+id/tableRow">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/butTro1"
+                android:layout_column="2"
+                android:src="@drawable/not1"
+                android:layout_gravity="bottom|center_horizontal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/butTro2"
+                android:layout_column="2"
+                android:src="@drawable/not2"
+                android:layout_gravity="bottom|center_horizontal" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/butTro3"
+                android:layout_column="2"
+                android:src="@drawable/not3"
+                android:layout_gravity="bottom|center_horizontal" />
+        </TableRow>
     </TableLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnVolverT"
+        android:src="@drawable/refresh"
+        android:onClick="onVolverT"
+        android:backgroundTintMode="src_in"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/Primary_Dark"
+        android:elevation="12dp" />
 
 </RelativeLayout>
 

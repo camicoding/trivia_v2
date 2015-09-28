@@ -18,7 +18,6 @@
         android:src="@drawable/play"
         android:id="@+id/butPlay"
         android:visibility="visible"
-        android:backgroundTint="@color/Divider"
         android:cropToPadding="false"
         android:clickable="true"
         android:paddingBottom="8dp"
@@ -32,7 +31,8 @@
         android:backgroundTintMode="src_in"
         style="@style/AppTheme"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@color/Divider" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -41,7 +41,6 @@
         android:id="@+id/butTrofeo"
         android:visibility="visible"
         android:onClick="onTrophies"
-        android:backgroundTint="@color/Divider"
         android:cropToPadding="false"
         android:clickable="true"
         android:paddingBottom="8dp"
@@ -56,7 +55,8 @@
 
         android:layout_alignTop="@+id/butAbout"
         android:layout_toRightOf="@+id/butPlay"
-        android:layout_toEndOf="@+id/butPlay" />
+        android:layout_toEndOf="@+id/butPlay"
+        android:background="@color/Divider" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -65,7 +65,6 @@
         android:id="@+id/butAbout"
         android:onClick="onAbout"
         android:visibility="visible"
-        android:backgroundTint="@color/Divider"
         android:cropToPadding="false"
         android:clickable="true"
         android:paddingBottom="8dp"
@@ -79,7 +78,8 @@
 
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="@color/Divider" />
 
     <TextView
         android:layout_width="wrap_content"

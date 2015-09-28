@@ -1,11 +1,14 @@
 package colombia.game.trivia.colombiadiversa;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import mundo.Juego;
@@ -24,6 +27,7 @@ public class ResultsActivity extends AppCompatActivity {
     private TextView puntosG;
     private TextView puntosA;
 
+    private ImageButton volverJugar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +37,7 @@ public class ResultsActivity extends AppCompatActivity {
         //malas=(EditText) findViewById(R.id.editText2);
         puntosGanados=(EditText) findViewById(R.id.editGanados);
         puntaje=(EditText) findViewById(R.id.editAcumulado);
+        volverJugar = (ImageButton) findViewById(R.id.btnVolver);
 
         resueltas = (TextView)findViewById(R.id.txtBuenas);
         puntosG = (TextView) findViewById(R.id.txtGanados);
@@ -74,6 +79,15 @@ public class ResultsActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_results, menu);
         return true;
+    }
+
+    public void onVolverR(View v){
+
+        Intent i = new Intent(ResultsActivity.this, MainActivity.class);
+        i.putExtra("mundo.Juego",juego);
+        startActivity(i);
+        volverJugar.setBackgroundColor(getResources().getColor(R.color.Cambio_Blue));
+        this.finish();
     }
 
     @Override

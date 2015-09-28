@@ -1,11 +1,14 @@
 package colombia.game.trivia.colombiadiversa;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -19,6 +22,8 @@ public class AboutActivity extends AppCompatActivity {
     private TextView txtAbout;
     private TextView title;
 
+    private ImageButton volverJugar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +31,7 @@ public class AboutActivity extends AppCompatActivity {
 
         txtAbout = (TextView) findViewById(R.id.txtAbout);
         title = (TextView) findViewById(R.id.title);
+        volverJugar = (ImageButton) findViewById(R.id.btnVolverA);
 
         // 2. get person object from intent
         juego = (Juego) getIntent().getSerializableExtra("mundo.Juego");
@@ -45,6 +51,15 @@ public class AboutActivity extends AppCompatActivity {
         title.setTypeface(custom_font);
 
 
+    }
+
+    public void onVolverA(View v){
+
+        Intent i = new Intent(AboutActivity.this, MainActivity.class);
+        i.putExtra("mundo.Juego",juego);
+        startActivity(i);
+        volverJugar.setBackgroundColor(getResources().getColor(R.color.Cambio_Blue));
+        this.finish();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

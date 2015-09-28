@@ -1,6 +1,7 @@
 package colombia.game.trivia.colombiadiversa;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
@@ -27,6 +29,7 @@ public class TrophiesActivity extends AppCompatActivity {
     private ImageView butTrofeo7;
     private ImageView butTrofeo8;
     private ImageView butTrofeo9;
+    private ImageButton volverJugar;
 
     private int puntuacion;
     private ImageView[]  trofeos;
@@ -41,6 +44,8 @@ public class TrophiesActivity extends AppCompatActivity {
 
         trofeos = new ImageView[9];
         trofeos2 = new ArrayList<Trofeo>(9);
+
+        volverJugar = (ImageButton) findViewById(R.id.btnVolverT);
 
         butTrofeo1=(ImageView) findViewById(R.id.butTro1);
         butTrofeo2=(ImageView) findViewById(R.id.butTro2);
@@ -96,6 +101,14 @@ public class TrophiesActivity extends AppCompatActivity {
         */
     }
 
+    public void onVolverT(View v){
+
+        Intent i = new Intent(TrophiesActivity.this, MainActivity.class);
+        i.putExtra("mundo.Juego",juego);
+        startActivity(i);
+        volverJugar.setBackgroundColor(getResources().getColor(R.color.Cambio_Blue));
+        this.finish();
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

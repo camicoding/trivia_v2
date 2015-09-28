@@ -86,12 +86,14 @@ public class MainActivity extends AppCompatActivity {
     public void onPlay(View v){
         Intent i = new Intent(MainActivity.this,GameActivity.class);
         i.putExtra("mundo.Juego",juego);
+        butPlay.setBackgroundColor(getResources().getColor(R.color.Cambio_Blue));
         startActivity(i);
     }
 
     public void onAbout(View v){
         Intent i = new Intent(MainActivity.this,AboutActivity.class);
         i.putExtra("mundo.Juego",juego);
+        butAbout.setBackgroundColor(getResources().getColor(R.color.Cambio_Blue));
         startActivity(i);
     }
 
@@ -99,13 +101,11 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(MainActivity.this,TrophiesActivity.class);
         i.putExtra("mundo.Juego",juego);
         i.putExtra("puntaje",puntos);
+        butTrophies.setBackgroundColor(getResources().getColor(R.color.Cambio_Blue));
         startActivity(i);
     }
 
-
-
-
-        public void cambiarActividad(int actividad){
+    public void cambiarActividad(int actividad){
         Juego game = new Juego(null);
         if(actividad == 1) {
             Intent intent = new Intent(this, GameActivity.class);
