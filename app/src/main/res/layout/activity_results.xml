@@ -37,9 +37,9 @@
         android:editable="false"
         android:textSize="30dp"
         android:id="@+id/editGanados"
-        android:layout_below="@+id/txtGanados"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/txtBuenas"
+        android:layout_alignEnd="@+id/txtBuenas" />
 
     <EditText
         android:layout_width="wrap_content"
